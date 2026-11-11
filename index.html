@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8 - Loja</title>
+    <link rel="icon" href="data:,">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+
+        header, footer {
+            background: #ddd;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 0;
+            list-style: none;
+
+            a {
+                color: black;
+            }
+        }
+
+        main {
+            padding: 20px;
+
+            section {
+                margin-bottom: 35px;
+            }
+        }
+
+        #product-div, #produtos-selecionados {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+
+            article {
+                box-sizing: border-box;
+                width: 250px;
+                padding: 15px;
+                background: white;
+                border: 1px solid #ccc;
+
+                img {
+                    width: 100%;
+                    height: 160px;
+                    object-fit: contain;
+                }
+
+                p {
+                    font-size: 14px;
+                }
+
+                button {
+                    margin-top: 10px;
+                    padding: 8px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        #total {
+            font-weight: bold;
+        }
+    </style>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Loja</h1>
+        <nav>
+            <ul>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#cesto">Cesto</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <main>
+        
+        <section id="produtos">
+            
+            <h2>Produtos</h2>
+            <article>
+                <select name="categories" id="categoriesid">
+                    <option value="todos">Todos</option>
+
+                </select>
+                <select name="ordernar" id="ordenar">
+                    <option value="menor">Menor preco</option>
+                    <option value="maior">Maior preco</option>
+                </select>
+                <input type="text" name="procurar" id="procurarProdutos" placeholder="Procurar produto">
+            </article>
+            <div id="product-div"></div>
+        </section>
+
+        <section id="cesto">
+            <h2>Cesto de compras</h2>
+            <div id="produtos-selecionados"></div>
+            <p id="total"></p>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" placeholder="O teu nome" required>
+            <label for="student">És aluno DEISI</label>
+            <input  type="checkbox" name="student" id="student">
+            <label for="cupom">cupom de desconto</label>
+            <input type="text" id = "cupom">
+            <button id="comprar" type="button">Comprar</button>
+            <p id="resultado-compra" role="status" aria-live="polite"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>2026, ULusófona</p>
+    </footer>
+</body>
+</html>
